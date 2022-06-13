@@ -1,0 +1,19 @@
+#Manage-users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 8vh;
+}
+
+#Manage-users-table-supervisor {
+    width: 80%;
+}
+
+#Manage-users-table-system-manager{
+    width: 80%;
+}
+
+#Manage-users-inner-table{
+    width: 100%;
+}
