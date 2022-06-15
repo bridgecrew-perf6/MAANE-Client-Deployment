@@ -11,7 +11,7 @@ class Connection{
         if(Connection._instance){
             return Connection._instance;
         }
-
+        //https://maane-server.herokuapp.com/
         const http = require('https');
         this.axios_instance = axios.create({
             baseURL: 'https://maane-server.herokuapp.com/',
@@ -77,6 +77,12 @@ class Connection{
                     }
                 }
 
+                if (error.code === 'ECONNABORTED'){
+
+                }
+
+                alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
+
 
                 // handle error
                 console.log(`GET FAILED FOR ${url}`);
@@ -110,6 +116,8 @@ class Connection{
                 // handle error
                 console.log(`POST FAILED FOR ${url} with args: ${args}`)
                 console.log(error);
+
+                alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
             });
     }
 
@@ -142,7 +150,6 @@ class Connection{
         })
             .catch(function (error) {
                 // handle error
-                console.log(`POST FAILED FOR '/user/login' with args: ${params}`) // TODO: remove this when done
                 console.log(error);
 
                 if (error.response){
@@ -150,6 +157,8 @@ class Connection{
                         callback({failure: "true"})
                     }
                 }
+
+                alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
             });
     }
 
