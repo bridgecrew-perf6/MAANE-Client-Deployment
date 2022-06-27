@@ -12,6 +12,7 @@ class Connection{
             return Connection._instance;
         }
         //https://maane-server.herokuapp.com/
+        // http://localhost:8080/
         const http = require('https');
         this.axios_instance = axios.create({
             baseURL: 'https://maane-server.herokuapp.com/',
@@ -81,7 +82,7 @@ class Connection{
 
                 }
 
-                alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
+                // alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
 
 
                 // handle error
@@ -117,7 +118,7 @@ class Connection{
                 console.log(`POST FAILED FOR ${url} with args: ${args}`)
                 console.log(error);
 
-                alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
+                // alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
             });
     }
 
@@ -150,6 +151,7 @@ class Connection{
         })
             .catch(function (error) {
                 // handle error
+                console.log('the error is')
                 console.log(error);
 
                 if (error.response){
@@ -157,8 +159,11 @@ class Connection{
                         callback({failure: "true"})
                     }
                 }
+                else{
+                    alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
+                }
 
-                alert('השרת אינו מגיב. אנא רענן/י ונסה/י שנית. או נסה/י מאוחר יותר')
+
             });
     }
 
